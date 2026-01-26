@@ -345,79 +345,98 @@
         @media (max-width: 768px) {
             .nav-links { display: none; }
         }
-        /* --- REVIEWS SECTION --- */
+
+         /* --- REVIEWS SECTION --- */
         .reviews-section {
             background-color: var(--bg-light);
-            overflow: hidden;
         }
 
         .reviews-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
         }
 
         .review-card {
-            position: relative;
-            height: 450px;
+            background: white;
             border-radius: var(--radius);
             overflow: hidden;
-            box-shadow: var(--shadow);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
             transition: var(--transition);
+            border: 1px solid var(--border);
         }
 
         .review-card:hover {
-            transform: scale(1.02);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .review-image-container {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
         }
 
         .review-image {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            transition: transform 0.6s ease;
         }
 
         .review-card:hover .review-image {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
 
-        .review-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 2rem;
-            background: linear-gradient(transparent, rgba(0,0,0,0.85));
-            color: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            height: 60%;
+        .review-content {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .review-stars {
+            color: #fbbf24;
+            margin-bottom: 0.75rem;
+            font-size: 1.2rem;
         }
 
         .review-text {
+            color: var(--text-main);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1.25rem;
             font-style: italic;
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-            line-height: 1.4;
         }
 
         .review-author {
             font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.85rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            color: var(--primary);
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
         }
 
-        .review-author::before {
-            content: '';
-            width: 20px;
-            height: 2px;
-            background: var(--accent);
+        
+        /* --- BRAND INTRO DESCRIPTION --- */
+        .brand-intro {
+            background-color: var(--bg-light);
+            text-align: center;
+            padding: 4rem 1.5rem;
+            border-bottom: 1px solid var(--border);
         }
+
+        .brand-intro h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .brand-intro p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
 
     </style>
 </head>
@@ -455,6 +474,14 @@
             <a href="#products" class="btn btn-primary">Explore Collection</a>
         </div>
     </header>
+
+    <!-- Brand Description Below Hero -->
+    <section class="brand-intro">
+        <div class="container">
+            <h2>Luxury Redefined for the Modern Soul</h2>
+            <p>At LUMINA, we believe that the objects you surround yourself with should be as purposeful as they are beautiful. Our mission is to bridge the gap between high-end craftmanship and everyday utility, bringing you a curated selection of 30 premium items that elevate your lifestyle, enhance your home, and stand the test of time.</p>
+        </div>
+    </section>
 
     <!-- Products Section -->
     <section id="products" class="section-padding">
@@ -822,34 +849,43 @@
         </div>
     </section>
 
-     <!-- Customers Reviews Section -->
+      <!-- Customers Reviews Section -->
     <section id="reviews" class="section-padding reviews-section">
         <div class="container">
             <div class="section-title">
-                <h2>Customer Reviews </h2>
-                <p>Loved by thousands across the nation</p>
+                <h2>Customer Stories</h2>
+                <p>Genuine experiences from our premium community</p>
             </div>
             <div class="reviews-grid">
                 <!-- Review 1 -->
                 <div class="review-card">
-                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhkIVcdzo9dGXWUtYohPjW9IN_SQ2N0O23wMsg7P04oQIp8ZVrQHVp7_J6lfOpGxTtU9UPaOchOlR46IjWKHQlzxtVLBsPkA-SY8kieDRTOfZWc6TgMDe99BQyxBOcH5vPBgIO_rem4GYcubgsD1pwF5AWgzkQw6Zx8I599mOABzf9RM_7MMYOPlZbSRng/s320/WhatsApp%20Image%202026-01-26%20at%209.54.08%20AM.jpeg" alt="Customer Review 1" class="review-image">
-                    <div class="review-overlay">
+                    <div class="review-image-container">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=800" alt="Customer Sarah" class="review-image">
+                    </div>
+                    <div class="review-content">
+                        <div class="review-stars">★★★★★</div>
                         <p class="review-text">"The attention to detail in these products is absolutely world-class. I've never seen such quality at this price point."</p>
                         <div class="review-author">Sarah Okeke, Lagos</div>
                     </div>
                 </div>
                 <!-- Review 2 -->
                 <div class="review-card">
-                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgvmzMT7V20Htr8RCr42BW5YO2Pg01ruEgpM1LOL-vWeig6-ndac1cAGU7cI9hiTdaZv8l1C5V1D6N8_vWOpNpe8OqDgSGf-CAO2ViavNJYH6OhUOOQxFmLbnGb9O8N7MoJlyD-HY1ILVx0wK4p_jFDlUwYzHJ3PhnYS2PmoKSgpTGHZvmqG-cpPf4_8U4/s320/WhatsApp%20Image%202026-01-26%20at%209.54.08%20AM%20%282%29.jpeg" alt="Customer Review 2" class="review-image">
-                    <div class="review-overlay">
+                    <div class="review-image-container">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800" alt="Customer David" class="review-image">
+                    </div>
+                    <div class="review-content">
+                        <div class="review-stars">★★★★★</div>
                         <p class="review-text">"Incredible service and lightning-fast delivery. The item looks even better in person than in the photos."</p>
                         <div class="review-author">David Adebayo, Abuja</div>
                     </div>
                 </div>
                 <!-- Review 3 -->
                 <div class="review-card">
-                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhBANUpYTXsv80JM20YgvVgxxKhq_KTX_gQIPhzRnhokjNkYZ5ip4whP2pi87m4TUJfGYrnCbLrWmeYuHHC25L7s-XzutrgxpNQaz_OxM2A5I3nKeNXShSNOaTSVfcgbod6_BElbCURsfrBdgfdy2Y7JFkeKP7g32ISKEfevJdsLoWgp-UkBhuaFA1BSPw/s320/WhatsApp%20Image%202026-01-26%20at%2010.13.37%20AM.jpeg" alt="Customer Review 3" class="review-image">
-                    <div class="review-overlay">
+                    <div class="review-image-container">
+                        <img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&q=80&w=800" alt="Customer Chioma" class="review-image">
+                    </div>
+                    <div class="review-content">
+                        <div class="review-stars">★★★★★</div>
                         <p class="review-text">"Joining the WhatsApp group was the best decision. I get first access to all the new drops and exclusive deals!"</p>
                         <div class="review-author">Chioma Nwosu, Port Harcourt</div>
                     </div>
