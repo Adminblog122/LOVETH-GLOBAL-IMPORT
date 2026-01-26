@@ -939,5 +939,29 @@
         </div>
     </footer>
 
+
+    
+    <script>
+        function openFullscreen(card) {
+            const modal = document.getElementById("imageModal");
+            const modalImg = document.getElementById("modalImg");
+            const src = card.querySelector("img").src;
+            modal.style.display = "flex";
+            modalImg.src = src;
+        }
+
+        function closeFullscreen() {
+            document.getElementById("imageModal").style.display = "none";
+        }
+
+        // Close on background click
+        window.onclick = function(event) {
+            const modal = document.getElementById("imageModal");
+            if (event.target == modal) {
+                closeFullscreen();
+            }
+        }
+    </script>
+
 </body>
 </html>
