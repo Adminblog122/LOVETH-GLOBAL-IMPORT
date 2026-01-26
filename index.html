@@ -345,6 +345,80 @@
         @media (max-width: 768px) {
             .nav-links { display: none; }
         }
+        /* --- REVIEWS SECTION --- */
+        .reviews-section {
+            background-color: var(--bg-light);
+            overflow: hidden;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .review-card {
+            position: relative;
+            height: 450px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .review-card:hover {
+            transform: scale(1.02);
+        }
+
+        .review-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .review-card:hover .review-image {
+            transform: scale(1.1);
+        }
+
+        .review-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem;
+            background: linear-gradient(transparent, rgba(0,0,0,0.85));
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            height: 60%;
+        }
+
+        .review-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            line-height: 1.4;
+        }
+
+        .review-author {
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .review-author::before {
+            content: '';
+            width: 20px;
+            height: 2px;
+            background: var(--accent);
+        }
+
     </style>
 </head>
 <body>
@@ -747,6 +821,43 @@
             </div>
         </div>
     </section>
+
+     <!-- Customers Reviews Section -->
+    <section id="reviews" class="section-padding reviews-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Customer Reviews </h2>
+                <p>Loved by thousands across the nation</p>
+            </div>
+            <div class="reviews-grid">
+                <!-- Review 1 -->
+                <div class="review-card">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=800" alt="Customer Review 1" class="review-image">
+                    <div class="review-overlay">
+                        <p class="review-text">"The attention to detail in these products is absolutely world-class. I've never seen such quality at this price point."</p>
+                        <div class="review-author">Sarah Okeke, Lagos</div>
+                    </div>
+                </div>
+                <!-- Review 2 -->
+                <div class="review-card">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800" alt="Customer Review 2" class="review-image">
+                    <div class="review-overlay">
+                        <p class="review-text">"Incredible service and lightning-fast delivery. The item looks even better in person than in the photos."</p>
+                        <div class="review-author">David Adebayo, Abuja</div>
+                    </div>
+                </div>
+                <!-- Review 3 -->
+                <div class="review-card">
+                    <img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&q=80&w=800" alt="Customer Review 3" class="review-image">
+                    <div class="review-overlay">
+                        <p class="review-text">"Joining the WhatsApp group was the best decision. I get first access to all the new drops and exclusive deals!"</p>
+                        <div class="review-author">Chioma Nwosu, Port Harcourt</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <!-- Footer -->
     <footer id="footer">
